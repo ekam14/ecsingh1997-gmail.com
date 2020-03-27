@@ -6,6 +6,8 @@ const forecast = require('../utils/forecast')
 
 const app = express()
 
+const port = process.env.PORT || 3000
+
 // telling the app to use hbs as view engine i.e. template
 app.set('views', path.join(__dirname, '../templates/views'))
 app.set('view engine', 'hbs')
@@ -80,6 +82,6 @@ app.get('*', (req, res) => {
   })
 })
 
-app.listen(3000, () => {
-  console.log('Listening on port 3000');
+app.listen(port, () => {
+  console.log('Listening on port ' + port);
 })
